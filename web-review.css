@@ -1,0 +1,12 @@
+#wrap {
+  margin: 0 auto;
+  width: 90%;
+}
+#wrap p {
+  width: 60%;
+}
+#wrap img {
+  margin: 3% 3%;
+  width: 23%;
+  float: right;
+}
