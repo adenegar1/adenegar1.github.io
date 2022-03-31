@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+
+header {
+  font-family: 'Satisfy', cursive;
+  background: #FF5733;
+}
+
+
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #ddd url("fall-background.jpg") no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+html, body.spring {
+  margin: 0;
+  padding: 0;
+  background: #ddd url("spring-background.jpg") no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+html, body.summer {
+  margin: 0;
+  padding: 0;
+  background: #ddd url("summer.jpg") no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+html, body.winter {
+  margin: 0;
+  padding: 0;
+  background: #ddd url("winter-background.jpg") no-repeat;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+}
+
+#wrap {
+  margin: 0 auto;
+  width: 75%;
+}
+
+header, nav, section, footer {
+  background: white;
+}
+
+header {
+  background-color: #FFA500;
+  color: black;
+  text-align: center;
+  font-size: 40px;
+  padding: 20px;
+}
+
+.spring header{
+  background-color: #58D;
+}
+
+.summer header{
+  background-color: pink;
+}
+
+.winter header {
+  background-color: #add8e6;
+}
+
+nav {
+  background-color: #FF4F33;
+  padding: 20px;
+  text-align: center;
+}
+
+.spring nav {
+  background-color: #004F33;
+}
+
+.autumn nav {
+  background-color: black;
+}
+
+.winter nav {
+  background-color: lightblue;
+}
+
+.summer nav {
+  background-color: #FFDD00;
+}
+nav li {
+  display: inline;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  font-size: 120%;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+nav a:hover {
+  background-color: maroon;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  background-color: #FFA500;
+  overflow: auto;
+}
+
+aside {
+  background-color: #FFA500;
+  width: 25%;
+  float: left;
+  padding: 2% 0 0 0%;
+}
+
+.spring aside, .spring section {
+  background-color: pink;
+}
+
+.summer aside, .summer section {
+  background-color: #FDD9B5;
+}
+
+.winter aside, .winter section {
+  background-color: blue;
+}
+
+aside a {
+  font-weight: 700;
+  color: black;
+  text-decoration: none;
+  width: 100%;
+  display: inline-block;
+  padding: 10px;
+}
+
+aside a:hover, nav a:hover {
+  background-color: darkgreen;
+  color: red;
+}
+
+aside li {
+  list-style-type: none;
+}
+
+aside ul {
+  padding: 0;
+  margin: 0;
+}
+
+.main aside {
+  display: none;
+}
+
+article {
+  background-color: #FFDD33;
+  width: 67%;
+  float: right;
+  padding: 4%;
+}
+
+.main article {
+  background-color: #FFDD33;
+  width: 92%;
+  float: right;
+  padding: 4%;
+}
+
+.summer article {
+  background-color: #4444FF;
+  width: 67%;
+  float: right;
+  padding: 4%;
+}
+
+.winter article {
+  background-color: white;
+  width: 67%;
+  float: right;
+  padding: 4%;
+}
+
+footer {
+  background-color: gray;
+  border: solid 1px;
+  text-align: center;
+  padding: 2%;
+}
+
+.yesbird {
+  width: 35%;
+  border: solid 2px;
+  float: right;
+  margin: 0 0 20px 40px;
+}
+
+@media only screen and (max-width: 800px) {
+  body {
+    background-color: lightblue;
+  }
+  #wrap {
+    width: 100%
+  }
+  aside {
+    text-align: center;
+  }
+  aside a {
+    padding: 10px;
+  }
+  nav li {
+    display: block;
+  }
+  nav a {
+    display: block;
+    padding: 10px;
+  }
+  nav a:hover{
+    background-color: transparent;
+  }
+  aside, article {
+    float: none;
+    width: 100%;
+  }
+  .yesbird {
+    float: none;
+    width: 92%;
+    margin: 10px;
+    display: none;
+  }
+}
