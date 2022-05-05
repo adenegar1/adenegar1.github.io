@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stats Simplified</title>
+    <link href="stats.css" rel="stylesheet" type="text/css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBEJTHR5J3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZBEJTHR5J3');
+</script>
+  </head>
+  <span class="form">
+  <body>
+    <div id="wrap">
+    <header>
+      <img src="normalcurve.png" alt="normal curve logo" width="10%">
+      <span>
+      Statistics Made Simple
+    </span>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ht.html">Hypothesis Test</a></li>
+        <li><a href="ci.html">Confidence Interval</a></li>
+        <li><a href="cs.html">Chi Square</a></li>
+        <li><a href="aov.html">ANOVA</a></li>
+        <li><a href="lr.html">Linear Regression</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+
+        <script type="text/javascript">
+    function redirect() {
+    var textValue = document.querySelector('input[name="habits2"]:checked').value;
+    if(textValue == "One")
+    {
+        location.href = "htone.html";
+    }
+    else if(textValue == "Two")
+    {
+        location.href = "httwo.html";
+    }
+    else
+    {
+        location.href = "htmany.html";
+    }
+}
+</script>
+
+<form action="javascript:redirect();">
+  <fieldset class="ntset">
+   <legend>Stats test finder</legend>
+ <h4>How many groups do you have?</h4>
+        <input type="radio" id="answer" name="habits2" value="One"><label class="fmt" for="habits2"> One</label><br>
+    <input type="radio" id="answer" name="habits2" value="Two"><label class="fmt" for="habits2"> Two</label><br>
+         <input type="radio" id="answer" name="habits2" value="Many"><label class="fmt" for="habits2"> >2</label><br>
+
+<p><input type="submit" value="Submit"  class="button" ></p>
+   <p><input type="reset" value="Reset" class="button" ></p>
+
+</form>
+
+<!-- broken form
+        <form id='formName' name='formName' onsubmit='redirect();return false;'>
+                 <input type='radio' id='hypothesis' name='testtype' value='Hypothesis'> <label for="hypothesis">Hypothesis test (Find the p-value and test statistic for )</label><br>
+                 <input type='radio' id='hypothesis' name='testtype' value='Confidence'> <label for="hypothesis">Confidence Interval</label><br>
+                 <input type='radio' id='hypothesis' name='testtype' value='Chi'> <label for="chi">Chi square test (Test likelihood of a distribution of coutns)</label><br>
+                 <input type='radio' id='hypothesis' name='testtype' value='Linreg'> <label for="linreg">Linear Regression (Fit a line to your data)</label><br>
+                 <input type='radio' id='hypothesis' name='testtype' value='Normal'> <label for="normal">Normal distribution analysis (Find p-values or test statistics based on the normal curve)</label><br>
+                 <input type='submit' name='submit' value='Submit'>
+             </form>
+
+             <script type='text/javascript'>
+             function redirect() {
+                 var input = document.getElementById('hypothesis').value;
+                 switch(input) {
+                     case 'Hypothesis':
+                         window.location.replace('ht.html');
+                         break;
+                     case 'Confidence':
+                         window.location.replace('ci.html');
+                         break;
+                     case 'Chi':
+                         window.location.replace('cs.html');
+                         break;
+                     case 'Linreg':
+                         window.location.replace('lr.html');
+                         break;
+                     case 'Normal':
+                         window.location.replace('norm.html');
+                         break;
+
+                     default:
+                         window.location.replace('default.html');
+                         break;
+                 }
+
+
+             }
+             </script>
+           end broken form -->
+    </br>
+    </article>
+    </section>
+
+    <footer>
+      Property of SimpleStats co. &copy;
+    </footer>
+    </div> <!--End wrap-->
+  </body>
+</span class="form">
+</html>

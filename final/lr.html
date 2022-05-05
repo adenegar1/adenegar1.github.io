@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stats Simplified</title>
+    <link href="stats.css" rel="stylesheet" type="text/css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBEJTHR5J3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZBEJTHR5J3');
+</script>
+  </head>
+  <span class="test">
+  <body>
+    <div id="wrap">
+    <header>
+      <img src="normalcurve.png" alt="normal curve logo" width="10%">
+      <span>
+      Statistics Made Simple
+    </span>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ht.html">Hypothesis Test</a></li>
+        <li><a href="ci.html">Confidence Interval</a></li>
+        <!--<li><a href="nd.html">Normal Distribution</a></li>-->
+        <li><a href="cs.html">Chi Square</a></li>
+        <li><a href="aov.html">ANOVA</a></li>
+        <li><a href="lr.html">Linear Regression</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h1>Linear Regression</h1>
+     </br>
+     A linear regression is used to detirmine if a linear relationship exists between variables and gives an equation to model that relationship. Before any conclusions about linear relationship are made, a scatterplot of the data should be analyzed. In order to use the R-code for the csv input your data needs to be put into 'tidy data' format.
+
+     <h3>R-code</h3>
+     <div class="rcode">
+       ##Regression line (Using Array input)</br>
+X= c(2,4,4,5,6)</br>
+Y = c(5,6,7,11,12)</br>
+cor(X,Y)</br>
+fit = lm(Y ~ X)</br>
+fit</br>
+cor.test(X,Y)</br>
+summary(fit)</br>
+confint(fit)</br>
+(cor(X,Y))^2</br>
+     </div class="rcode">
+     <div class="rcode">
+       ##Regression line (Using csv input)</br>
+A = read.csv(file.choose())</br>
+head(A)</br>
+summary(A)</br>
+nrow(A)</br>
+x = A$budget</br>
+y = A$gross</br>
+plot(x,y) </br>
+abline(lm(formula=y~x))</br>
+lm(formula=y~x)</br>
+summary(lm(formula=y~x))</br>
+cor(x,y)</br>
+(cor(x,y))^2</br>
+confint(lm(formula=y~x))</br>
+
+     </div class="rcode">
+     <h3>Example of Multiple Regression usage</h3>
+     <div class="rcode">
+       ##Multiple Regression</br>
+lm(formula=y~A$X3+A$X4+A$X5+A$X6+A$X7)</br>
+summary(lm(formula=y~A$X3+A$X4+A$X5+A$X6+A$X7))</br>
+     </div class="rcode">
+    </article>
+    </section>
+
+    <footer>
+      Property of SimpleStats co. &copy;
+    </footer>
+    </div> <!--End wrap-->
+  </body>
+</span class="test">
+</html>

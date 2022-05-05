@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stats Simplified</title>
+    <link href="stats.css" rel="stylesheet" type="text/css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBEJTHR5J3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZBEJTHR5J3');
+</script>
+  </head>
+  <span class="test">
+  <body>
+    <div id="wrap">
+    <header>
+      <img src="normalcurve.png" alt="normal curve logo" width="10%">
+      <span>
+      Statistics Made Simple
+    </span>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ht.html">Hypothesis Test</a></li>
+        <li><a href="ci.html">Confidence Interval</a></li>
+        <!--<li><a href="nd.html">Normal Distribution</a></li>-->
+        <li><a href="cs.html">Chi Square</a></li>
+        <li><a href="aov.html">ANOVA</a></li>
+        <li><a href="lr.html">Linear Regression</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h1>One sample z-test</h1>
+
+     </br>
+     <p>The one sample z-test should be used when there is a given population mean and standard deviation and we are exploring whether there is evidence of a significant difference between what we observed and in our sample and the population.</p>
+     <h2>R-code</h2>
+     <div class="rcode">
+       <p>
+         ##One sample z-test (Continuous)</br>
+#Enter Data</br>
+5 -> xbar</br>
+30 -> n</br>
+0 -> mu</br>
+10 -> sd</br>
+#Hypothesis test</br>
+#P-value (right)</br>
+1 - pnorm(xbar,mu,sd/sqrt(n))</br>
+#P-value (left)</br>
+pnorm(xbar,mu,sd/sqrt(n))</br>
+       </p>
+     </div class="rcode">
+     <div class="rcode">
+       <p>##One sample z-test (Proportions)</br>
+#Enter data</br>
+ -> phat</br>
+ -> mu</br>
+ -> n</br></br>
+
+#Hypothesis test</br>
+se = sqrt((mu*(1-mu))/n)</br>
+diff = phat-mu</br>
+z = diff/se</br>
+#P-value</br>
+#two sided p value (right)</br>
+2*(1-pt(z, n-1))</br>
+#one sided p value (right)</br>
+(1-pt(z, n-1))</br>
+#two sided p value (left)</br>
+2*pt(z, n-1)</br>
+#one sided p value (left)</br>
+pt(z, n-1)</br>
+</br>
+#Confidence Interval</br>
+#Manually input CI value</br>
+CI <- .95</br>
+se = sqrt((mu*(1-mu))/n)</br>
+zs = qnorm((1+CI)/2)</br>
+MOE <- zs*se</br>
+diff = phat-mu</br>
+diff + MOE</br>
+diff - MOE</br>
+</p>
+     </div class="rcode">
+    </article>
+    </section>
+
+    <footer>
+      Property of SimpleStats co. &copy;
+    </footer>
+    </div> <!--End wrap-->
+  </body>
+</span class="test">
+</html>

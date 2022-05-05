@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stats Simplified</title>
+    <link href="stats.css" rel="stylesheet" type="text/css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBEJTHR5J3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZBEJTHR5J3');
+</script>
+  </head>
+  <span class="test">
+  <body>
+    <div id="wrap">
+    <header>
+      <img src="normalcurve.png" alt="normal curve logo" width="10%">
+      <span>
+      Statistics Made Simple
+    </span>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ht.html">Hypothesis Test</a></li>
+        <li><a href="ci.html">Confidence Interval</a></li>
+        <!--<li><a href="nd.html">Normal Distribution</a></li>-->
+        <li><a href="cs.html">Chi Square</a></li>
+        <li><a href="aov.html">ANOVA</a></li>
+        <li><a href="lr.html">Linear Regression</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h1>Chi Squared test of Independence</h1>
+     </br>
+     The Chi squared test of Independence is used to detirmine if respective counts are associated with each other and requires expected counts to be created.
+     <h3>R-code</h3>
+     <div class="rcode">
+       ##Chi Square test of Independence</br>
+observed <- data.frame("name" = c(1,2,3), "name2" = c(4,5,6))</br>
+df = (if(nrow(observed) == 1){1}else{(nrow(observed)-1)})*(if(ncol(observed) == 1){1}else((ncol(observed)-1)))</br>
+props <- colSums(observed)/sum(observed)</br>
+expected <- 0*observed</br>
+for (x in 1:nrow(observed)){</br>
+  expected[x,] = props*rowSums(observed[x,])</br>
+}</br>
+Chi = sum((observed - expected)^2/expected)</br>
+1-pchisq(Chi, df)</br>
+     </div class="rcode">
+
+    </article>
+    </section>
+
+    <footer>
+      Property of SimpleStats co. &copy;
+    </footer>
+    </div> <!--End wrap-->
+  </body>
+</span class="test">
+</html>

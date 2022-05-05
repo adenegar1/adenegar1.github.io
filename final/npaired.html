@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stats Simplified</title>
+    <link href="stats.css" rel="stylesheet" type="text/css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBEJTHR5J3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZBEJTHR5J3');
+</script>
+  </head>
+  <span class="test">
+  <body>
+    <div id="wrap">
+    <header>
+      <img src="normalcurve.png" alt="normal curve logo" width="10%">
+      <span>
+      Statistics Made Simple
+    </span>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ht.html">Hypothesis Test</a></li>
+        <li><a href="ci.html">Confidence Interval</a></li>
+        <!--<li><a href="nd.html">Normal Distribution</a></li>-->
+        <li><a href="cs.html">Chi Square</a></li>
+        <li><a href="aov.html">ANOVA</a></li>
+        <li><a href="lr.html">Linear Regression</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h1>Non-paired data t-test</h1>
+     </br>
+     A non-paired t-test is used to determine the likelihood of the observed difference or something more extreme between two different samples. Included below is the code for the difference of two means or the difference of two proportions.
+     <h2>R-code</h2>
+     <div class="rcode">
+       ##Difference of two means</br>
+#data entry</br>
+ -> x1</br>
+ -> x2</br>
+ -> s1</br>
+ -> s2</br>
+ -> n1</br>
+ -> n2</br>
+ -> mudiff</br></br>
+
+#Hypothesis test</br>
+se <- sqrt((s1^2)/n1+(s2^2)/n2)</br>
+t = ((x1-x2)-(mudiff))/se</br>
+df <- if(n1 < n2) {n1-1} else {n2-1}</br>
+1 - pt(t, df)</br>
+t</br></br>
+
+##Difference of two means Confidence interval</br>
+CI <- .95</br>
+tstar <- qt((CI+1)/2, df)</br>
+(x1-x2)+se*tstar</br>
+(x1-x2)-se*tstar</br>
+MOE <- (((x1-x2)+se*tstar)-((x1-x2)-se*tstar))/2</br>
+MOE</br>
+
+     </div class="rcode">
+     <div class="rcode">
+       ## Difference of two proportions</br>
+#Enter Data</br>
+ -> n1</br>
+ -> n2</br>
+ -> x1</br>
+ -> x2</br>
+0 -> mudiff</br></br>
+
+#Hypothesis test Statistics</br>
+p1 = x1/n1</br>
+p2 = x2/n2</br>
+pool = (x1+x2)/(n1+n2)</br>
+hse = sqrt((pool*(1-pool)/n1)+pool*(1-pool)/n2)</br>
+t = ((p1-p2)-(mudiff))/hse</br>
+df = if(n1 < n2) {n1-1} else {n2-1}</br>
+xdiff = (x1/n1)-(x2/n2)</br>
+t</br></br>
+
+#P-Values</br>
+#two sided p value (right)</br>
+2*(1-pt(t,df))</br>
+#one sided p value (right)</br>
+(1-pt(t,df))</br>
+#two sided p value (left)</br>
+2*pt(t,df)</br>
+#one sided p value (left)</br>
+pt(t,df)</br></br>
+
+#Confidence interval</br>
+#Manually input Confidence interval value</br>
+CI <- .95</br>
+cse = sqrt((p1*(1-p1)/n1)+p2*(1-p2)/n2)</br>
+zs = qnorm((1+CI)/2)</br>
+MOE <- zs*cse</br>
+xdiff + MOE</br>
+xdiff - MOE</br>
+     </div class="rcode">
+    </article>
+    </section>
+
+    <footer>
+      Property of SimpleStats co. &copy;
+    </footer>
+    </div> <!--End wrap-->
+  </body>
+</span class="test">
+</html>

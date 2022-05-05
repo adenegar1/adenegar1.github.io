@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stats Simplified</title>
+    <link href="stats.css" rel="stylesheet" type="text/css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBEJTHR5J3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZBEJTHR5J3');
+</script>
+  </head>
+  <span class="test">
+  <body>
+    <div id="wrap">
+    <header>
+      <img src="normalcurve.png" alt="normal curve logo" width="10%">
+      <span>
+      Statistics Made Simple
+    </span>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ht.html">Hypothesis Test</a></li>
+        <li><a href="ci.html">Confidence Interval</a></li>
+        <!--<li><a href="nd.html">Normal Distribution</a></li>-->
+        <li><a href="cs.html">Chi Square</a></li>
+        <li><a href="aov.html">ANOVA</a></li>
+        <li><a href="lr.html">Linear Regression</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h1>ANOVA</h1>
+     </br>
+     The ANOVA test or analysis of variance test is designed to compare many means and return a number of different test statistics. The usage of the ANOVA analysis cannot really be generalized in code so I've instead included an example of the usage below including a TukeyHSD analysis. To use R-code as shown, you will need to input 'tidy data'. Tidy data consists of column headers in the first row and values in the rows below. Totals should not be included in tidy data. Tidy data can be created in an excel document and saved as a csv file which can then be analyzed using this code.</br>
+     <h3>The other option</h3>
+     <p>Below the R-code is an ANOVA calculator that only requires that you input your data and interpret.</p>
+     <h2>R-code</h2>
+     <div class="rcode">
+       ##ANOVA analysis</br>
+       espresso = read.csv(file.choose())</br>
+boxplot(espresso$foamIndx~espresso$method)</br>
+summary(subset(espresso,method=="I-Esp"))</br>
+summary(subset(espresso,method=="Bar"))</br>
+summary(subset(espresso,method=="Hyper"))</br>
+summary(aov(espresso$foamIndx~espresso$method))</br>
+TukeyHSD(aov(espresso$foamIndx~espresso$method))</br>
+     </div class="rcode">
+     <div class="rcode">
+       ##Multi-factor ANOVA</br>
+  pine = read.csv(file.choose())</br>
+  summary(pine)</br>
+  boxplot(pine$moisture ~ pine$months)</br>
+  boxplot(pine$moisture ~ pine$package)</br>
+  boxplot(pine$moisture ~ pine$solution)</br>
+  summary(subset(pine,package=="glass"))</br>
+  summary(aov(pine$moisture ~ pine$solution))</br>
+  summary(aov(pine$moisture ~ pine$package))</br>
+  summary(aov(pine$moisture ~ pine$months))</br>
+  TukeyHSD(aov(pine$moisture ~ pine$solution))</br>
+  TukeyHSD(aov(pine$moisture ~ pine$months))</br>
+  TukeyHSD(aov(pine$moisture ~ pine$package))</br>
+  summary(aov(pine$moisture ~ pine$solution*pine$package))</br>
+  TukeyHSD(aov(pine$moisture ~ pine$solution*pine$package))</br>
+  pine$months = as.factor(pine$months) #numerical data to categorical</br>
+
+     </div class="rcode"></br>
+     <iframe src="https://www.socscistatistics.com/tests/anova/default2.aspx" width="80%" height="500">
+  <p>Your browser does not support iframes.</p>
+</iframe>
+    </article>
+    </section>
+
+    <footer>
+      Property of SimpleStats co. &copy;
+    </footer>
+    </div> <!--End wrap-->
+  </body>
+</span class="test">
+</html>

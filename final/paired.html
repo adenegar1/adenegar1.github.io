@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Stats Simplified</title>
+    <link href="stats.css" rel="stylesheet" type="text/css">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZBEJTHR5J3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZBEJTHR5J3');
+</script>
+  </head>
+  <span class="test">
+  <body>
+    <div id="wrap">
+    <header>
+      <img src="normalcurve.png" alt="normal curve logo" width="10%">
+      <span>
+      Statistics Made Simple
+    </span>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ht.html">Hypothesis Test</a></li>
+        <li><a href="ci.html">Confidence Interval</a></li>
+        <!--<li><a href="nd.html">Normal Distribution</a></li>-->
+        <li><a href="cs.html">Chi Square</a></li>
+        <li><a href="aov.html">ANOVA</a></li>
+        <li><a href="lr.html">Linear Regression</a></li>
+      </ul>
+    </nav>
+
+    <section>
+      <article>
+        <h1>Paired data t-test</h1>
+     </br>
+     A paired data t-test should be conducted when data points are paired with each other. For example, this test could be used to determine if a there is a significant difference between the weights of people before and after a weight loss program.
+     <h2>R-code</h2>
+     <div class="rcode">
+       ##paired numerical data hypothesis test</br>
+#with data</br>
+c() -> a</br>
+c() -> b</br>
+ -> mu</br>
+data <- a-b</br>
+xdiff <- mean(data)</br>
+sdiff <- sd(data)</br>
+ndiff <- sum((data*0)+1)</br>
+#with sample statistics</br>
+ -> ndiff</br>
+ -> xdiff</br>
+ -> sdiff</br>
+ -> mu</br>
+#calculations</br>
+SE = sdiff/sqrt(ndiff)</br>
+t = (xdiff-mu)/SE</br>
+t</br>
+#two sided p value (right)</br>
+2*(1-pt(t,ndiff-1))</br>
+#one sided p value (right)</br>
+(1-pt(t,ndiff-1))</br>
+#two sided p value (left)</br>
+2*pt(t,ndiff-1)</br>
+#one sided p value (left)</br>
+pt(t,ndiff-1)</br></br>
+
+##Paired numerical data Confidence interval</br>
+#Manually input CI value</br>
+.95 -> CI</br>
+t <- qt((1+CI)/2, ndiff-1)</br>
+SE <- sdiff/sqrt(ndiff)</br>
+MOE <- t*SE</br>
+xdiff + MOE</br>
+xdiff - MOE</br>
+
+     </div class="rcode">
+
+    </article>
+    </section>
+
+    <footer>
+      Property of SimpleStats co. &copy;
+    </footer>
+    </div> <!--End wrap-->
+  </body>
+</span class="test">
+</html>
